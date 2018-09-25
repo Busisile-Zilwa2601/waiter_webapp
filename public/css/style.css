@@ -28,3 +28,9 @@ label.label-clickable input{
 label{
     cursor: pointer;
 }
+li.beInLine{
+    display: inline;
+    margin: 0.5rem;
+    padding-right: 15px;
+    border-right: 2px solid grey;
+}
