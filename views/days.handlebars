@@ -1,0 +1,27 @@
+<div calss='row'>
+    <div class=''>
+        <h1>Booked Days</h1>
+        <hr/>
+    </div>
+</div>
+<div class="row">
+    <form action='/days' method='get'>
+        <ul class="offset-2">
+            {{#each week_days}}
+            <li class='list-group-item'>
+                <span class = '{{color}}'>{{day}}</span><hr />
+                <ul class="">
+                    {{#each waiters}}
+                    <li class ='caps'>{{names}}<hr/></li>
+                    {{/each}}
+                </ul>
+            </li>
+            {{/each}}
+        </ul>
+    </form>
+</div>
+<div class='row'>
+    <form action='/reset' method="post">
+        <button type="submit" name="button" class="btn-primary">Reset</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div calss='row'>
+    <div class=''>
+        <h1>Waiter App</h1>
+        <hr>
+    </div>
+</div>
+<form action='/waiter/{{waiter_name}}' method='post'>
+    <div class="offset-4">
+        <p>
+            <span class='caps'>{{waiter_name}}</span>
+            {{#if messages.info}}
+                {{messages.info}}
+            {{/if}}
+        </p>
+    </div>
+    <div class="row">
+            <br/>
+            <p class=" offset-3 col-md-7">
+                {{#each week_days}}
+                <label class='label-clickable'>
+                      <input type='checkbox' value='{{id}}' name='day' {{checked}} /> {{day}}    
+                  </label>
+                  {{/each}} 
+            </p>
+    </div>
+     <div>
+        <button class="btn-primary" type="submit" >Submit</button>
+        
+    </div>
+</form>

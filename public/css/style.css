@@ -1,0 +1,30 @@
+.caps{
+    text-transform:capitalize;
+}
+.red{
+    background-color: red;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid grey;
+}
+.yellow{
+    background-color: orange;
+    text-align: center;
+    font-size: 20px;
+    width: 750px;
+    border: 2px solid grey;
+}
+.green{
+    background-color: green;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid grey;
+}
+
+label.label-clickable input{
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+label{
+    cursor: pointer;
+}
