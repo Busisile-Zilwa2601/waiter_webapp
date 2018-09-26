@@ -1,5 +1,5 @@
 const assert = require('assert');
-const waiterApp = require('../week_days');
+const WaiterApp = require('../Week_days');
 const pg = require("pg");
 const Pool = pg.Pool;
 
@@ -16,31 +16,31 @@ describe('The Waiter database webApp', function () {
         await pool.query('delete from waiter_names');
     });
     it('It should return all on days of week', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         let days = await waiter.allWeekDays();
         assert.deepEqual(days, [{"id":1,"day":"Sunday"},{"id":2,"day":"Monday"},{"id":3,"day":"Tuesday"},{"id":4,"day":"Wednesday"},{"id":5,"day":"Thursday"},{"id":6,"day":"Friday"},{"id":7,"day":"Saturday"}]);
     });
     it('It should return TRUE when name is on the database', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.add('Busisile');
         let nameCheck = await waiter.checkNames('busisile');
         assert.equal(nameCheck, true);
     });
     it('It should return FALSE when name is not the database', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.add('Busisile');
         let nameCheck = await waiter.checkNames('anele');
         assert.equal(nameCheck, false);
     });
     it('It should return a name from the database', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.add('Busisile');
         await waiter.add('anele');
         let nameFetch = await waiter.getName('anele');
         assert.equal(nameFetch.names, 'anele');
     });
     it('It should return all days with days booked by waiter checked', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.addData('Busisile', ['2', '3', '4']);
         await waiter.addData('anele', ['2','4']);
         let daysFetchAnele = await waiter.getDays('anele');
@@ -65,7 +65,7 @@ describe('The Waiter database webApp', function () {
                                         ] );    
     });
     it('It should return all days with colors: Green, Yellow, Red  ', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.addData('Busisile', ['2', '3', '4']);
         await waiter.addData('anele', ['2','4']);
         await waiter.addData('yegan', ['2','4', '7']);
@@ -82,7 +82,7 @@ describe('The Waiter database webApp', function () {
                                     ]);
     });
     it('It should clear the waiter names and their booked days', async function(){
-        let waiter = waiterApp(pool);
+        let waiter = WaiterApp(pool);
         await waiter.addData('Busisile', ['2', '3', '4']);
         await waiter.addData('anele', ['2','4']);
         await waiter.addData('yegan', ['2','4', '7']);
