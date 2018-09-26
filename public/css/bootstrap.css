@@ -702,8 +702,8 @@ pre code {
 }
 
 .col-12 {
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
+  /* -ms-flex: 0 0 100%;
+  flex: 0 0 100%; */
   max-width: 100%;
 }
 
@@ -1516,25 +1516,21 @@ pre code {
 
 .table {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.05rem;
   background-color: transparent;
 }
 
-.table th,
-.table td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
-}
-
-.table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
-}
-
-.table tbody + tbody {
-  border-top: 2px solid #dee2e6;
-}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
 
 .table .table {
   background-color: #fff;
@@ -5134,9 +5130,9 @@ input[type="button"].btn-block {
 
 .list-group-item {
   position: relative;
-  display: block;
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1.5px;
+  display: inline-block;
+  padding: 0.25rem 1.25rem;
+  margin-bottom: 0.5px;
   background-color: #fff;
   width: 750px;
   border: 1px solid rgba(0, 0, 0, 0.125);

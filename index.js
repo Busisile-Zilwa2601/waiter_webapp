@@ -5,8 +5,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const pg = require("pg");
-const myRoutes = require('./myRoutes');
-const weekDays = require('./week_days');
+const RoutesFunctions = require('./RoutesFunctions');
+const WeekDays = require('./Week_days');
 const Pool = pg.Pool;
 let app = express();
 
@@ -40,8 +40,8 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 //instances
-let myWeekDays = weekDays(pool);
-let routes = myRoutes(myWeekDays);
+let myWeekDays = WeekDays(pool);
+let routes = RoutesFunctions(myWeekDays);
 
 //using body parser
 app.use(bodyParser.urlencoded({
