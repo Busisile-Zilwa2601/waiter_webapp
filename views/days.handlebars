@@ -5,18 +5,15 @@
     </div>
 </div>
 <div class="row">
-    {{!-- <form action='/days' method='get'> --}}
         {{#each week_days}}
         <div class='two columns '>
-            <span class='{{color}}'>{{day}}</span>
+            <div class='{{color}}'>{{day}}</div>
             <hr />
             {{#each waiters}}
             <h6 class='caps'>{{names}}</h6>
             {{/each}}
         </div>
         {{/each}}
-
-    {{!-- </form> --}}
 </div>
 <hr />
 <div class='row'>
