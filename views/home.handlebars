@@ -15,16 +15,17 @@
     </div>
     <div class="row">
             <br/>
-            <p class=" offset-3 col-md-7">
                 {{#each week_days}}
-                <label class='label-clickable'>
-                      <input type='checkbox' value='{{id}}' name='day' {{checked}} /> {{day}}    
-                  </label>
+                <div class='two columns '>
+                <div class='label-clickable {{#if checked}}backgroundGrey{{/if}}'>
+                    <input type='checkbox' value='{{id}}' name='day' {{checked}}/>{{day}}     
+                  </div>
+                </div>  
                   {{/each}} 
-            </p>
     </div>
+    <hr/>
      <div>
-        <button class="btn-primary" type="submit" >Submit</button>
+        <button class="btn btn-primary" type="submit" >Submit</button>
         
     </div>
 </form>

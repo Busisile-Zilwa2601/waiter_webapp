@@ -6,7 +6,6 @@
     background-color: red;
     text-align: center;
     font-size: 20px;
-    text-align: center;
     margin-right: 1px;
     padding: 11px;
     border: 2px 
@@ -15,7 +14,6 @@
     background-color: orange;
     text-align: center;
     font-size: 20px;
-    text-align: center;
     margin-right: 1px;
     padding: 11px;
     border: 2px ;
@@ -24,18 +22,31 @@
     background-color: green;
     text-align: center;
     font-size: 20px;
-    text-align: center;
     margin-right: 1px;
     padding: 11px;
     border: 2px 
 }
 
-label.label-clickable input{
+div.label-clickable input{
     display: inline-block;
     margin-bottom: 0.5rem;
+    margin-left: -0.05rem;
+    
 }
-label{
+div.label-clickable {
     cursor: pointer;
+    font-size: 20px;
+    margin-right: 1px;
+    padding: 11px;
+    /* border: 2px solid; */
+    text-align: center;
+
+}
+.backgroundGrey{
+    background-color: #D0D3D4;
+}
+.fa-user{
+    font-size: 12px;
 }
 .beInLine{
     display: inline;
